@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+    char nome[30];
+    float peso;
+    float altura;
+
+} pesoAltura;
+
+int main(void) {
+    pesoAltura pessoa1;
+    float imc;
+    printf("Digite seu nome: \n");
+    scanf("%s", pessoa1.nome);
+    printf("Tudo bem, sr(a) %s. Digite seu peso em kgs:  \n", pessoa1.nome);
+    scanf("%f", &pessoa1.peso);
+    printf("Digite sua altura: em metros  \n");
+    scanf("%f", &pessoa1.altura);
+
+    imc = pessoa1.peso / (pessoa1.altura * pessoa1.altura);
+    printf("Seu IMC é: %.2f\n", imc);
+
+    if (imc < 18.5) {
+        printf("Você está abaixo do peso.\n");
+    }
+    else if (imc >= 18.5 && imc < 25){
+        printf("Você está no peso ideal.\n");
+    }
+    else if (imc >= 25 && imc < 30){
+        printf("Você está acima do peso.\n");
+    }
+    else if (imc >= 30 ){
+        printf("Você está muito acima do peso.\n");
+    }
+    return 0;
+}
